@@ -10,7 +10,7 @@ Quick instructions:
 
 ```bash
 git clone https://github.com/dimetron/dockvpn-rpi.git
-docker build dockvpn-rpi
+docker build -t dockvpn-rpi dockvpn-rpi
 docker run -d --privileged  --name vpn --restart=always -p 1194:1194/udp -p 443:443/tcp --dns=8.8.8.8 dockvpn-rpi /bin/sh -c run
 sudo docker run -t -i -p 8080:8080 --dns=8.8.8.8 --rm  --volumes-from vpn dockvpn-rpi serveconfig
 ```
